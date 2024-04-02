@@ -5,17 +5,30 @@ class Sorting:
     def __init__(self):
         pass
 
-    def tri_selection(self,tab):
-        for i in range(len(tab)-1):
+    def tri_selection(self,list):
+        for i in range(len(list)-1):
             i_min = i
-            for j in range(i+1, len(tab)):
-                if tab[j]<tab[i_min]:
+            for j in range(i+1, len(list)):
+                if list[j]<list[i_min]:
                     i_min=j
-            tab[i],tab[i_min]=tab[i_min],tab[i]
-        return tab
+            list[i],list[i_min]=list[i_min],list[i]
+        return list
     
-    def random_tab(n):
-        tab = []
+    def random_list(self,n):
+        list = []
         for i in range(n):
-            tab.append(randint(1,n))
-        return tab
+            list.append(randint(1,n))
+        return list
+
+tri = Sorting()
+for i in range(4):
+    size = 10**(i+1)
+    list_selection = tri.random_list(size)
+
+    if i < 4:
+        debut_selection = perf_counter()
+        list_selection = tri.tri_selection(list_selection)
+        fin_selection = perf_counter()
+        print(
+            f"Tri sélection taille {str(size)} : {str(fin_selection - debut_selection)}"
+        )
