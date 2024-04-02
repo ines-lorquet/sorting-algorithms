@@ -25,10 +25,17 @@ for i in range(4):
     size = 10**(i+1)
     list_selection = tri.random_list(size)
 
+    if size == 10:
+        print()
+        print(list_selection,"Unordered List")
+        print(tri.tri_selection(list_selection), "Sorted List")
+        print()
     if i < 4:
+        
         debut_selection = perf_counter()
         list_selection = tri.tri_selection(list_selection)
         fin_selection = perf_counter()
         print(
             f"Tri sélection taille {str(size)} : {str(fin_selection - debut_selection)}"
         )
+    print()
