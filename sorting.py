@@ -30,8 +30,8 @@ for i in range(4):
         print(list_selection,"Unordered List")
         print(tri.tri_selection(list_selection), "Sorted List")
         print()
-    if i < 4:
         
+    if i < 4:
         debut_selection = perf_counter()
         list_selection = tri.tri_selection(list_selection)
         fin_selection = perf_counter()
