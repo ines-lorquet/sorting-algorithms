@@ -13,3 +13,9 @@ class Sorting:
                     i_min=j
             tab[i],tab[i_min]=tab[i_min],tab[i]
         return tab
+    
+    def random_tab(n):
+        tab = []
+        for i in range(n):
+            tab.append(randint(1,n))
+        return tab
