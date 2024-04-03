@@ -29,3 +29,9 @@ for i in range(4):
     size = 10**(i+1)
     list_insertion = tri.random_list(size)
 
+    if size == 10:
+        print()
+        print(list_insertion,"Unordered List")
+        print(tri.tri_insertion(list_insertion), "Sorted List")
+        print()
+        
