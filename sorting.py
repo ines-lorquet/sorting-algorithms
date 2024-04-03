@@ -37,7 +37,7 @@ class Sorting(TriInsertin):
                 f"Tri sélection taille {str(size)} : {str(fin_insertion - debut_insertion)}"
             )
         print()
-        
+
 tri = Sorting()
 tri.test()
 
