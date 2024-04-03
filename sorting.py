@@ -16,3 +16,10 @@ class Sorting:
         return list
 
 
+    def random_list(self,n):
+        list = []
+        for i in range(n):
+            list.append(randint(1,n))
+        return list
+
+
