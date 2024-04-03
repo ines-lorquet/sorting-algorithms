@@ -22,4 +22,4 @@ class Sorting:
             list.append(randint(1,n))
         return list
 
-
+tri = Sorting()
