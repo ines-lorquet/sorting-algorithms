@@ -2,7 +2,7 @@ class TriBulle:
     def __init__(self, arr):
         self.arr = arr
 
-    def bubblesort(self):
+    def bubble_sort(self):
         # Get the length of the array
         n = len(self.arr)
         # Traverse through all array elements
