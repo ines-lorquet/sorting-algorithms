@@ -35,3 +35,10 @@ for i in range(4):
         print(tri.tri_insertion(list_insertion), "Sorted List")
         print()
         
+    debut_insertion = perf_counter()
+    list_insertion = tri.tri_insertion(list_insertion)
+    fin_insertion= perf_counter()
+    print(
+        f"Tri sélection taille {str(size)} : {str(fin_insertion - debut_insertion)}"
+    )
+print()
