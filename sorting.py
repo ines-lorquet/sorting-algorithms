@@ -23,3 +23,9 @@ class Sorting:
         return list
 
 tri = Sorting()
+
+
+for i in range(4):
+    size = 10**(i+1)
+    list_insertion = tri.random_list(size)
+
