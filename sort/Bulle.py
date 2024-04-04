@@ -1,4 +1,4 @@
-class TriBulle:
+class Bulle:
     def __init__(self, arr):
         self.arr = arr
 
@@ -20,3 +20,4 @@ class TriBulle:
 
 
 
+  

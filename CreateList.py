@@ -1,7 +1,11 @@
 import random
-from TriSelection import TriSelection
-from TriBulle import TriBulle
-from TriInsertion import TriInsertion
+from sort.Selection import Selection
+from sort.Bulle import Bulle
+from sort.Insertion import Insertion
+from sort.Fusion import Fusion
+from sort.Quick import Quick
+from sort.Heap import Heap
+# from sort.Comb import Comb
 from time import time
 
 
@@ -32,29 +36,25 @@ if __name__ == "__main__":
     unordered_list = createList.generate_list()
     print(f"\nLa liste de {length} nombres réels à été générée.\n")
 
-    # print ("Tri sélecion : \033[94m 1 \033[0m\nTri bulle : \033[94m 2 \033[0m\nTri insertion : \033[94m 3 \033[0m\n")
-
-
     for i in range(1,8):
         print(f"Tri {['sélection', 'bulle', 'insertion', 'fusion', 'rapide', 'par tas', 'à peigne'][i-1]} - \033[94m{i}\033[0m")
 
     sort = int(input("\nChoisissez le chiffre correspondant à la méthode de tri voulue : "))
 
     if sort == 1:
-        triSelection = TriSelection (unordered_list)
+        Selection = Selection (unordered_list)
         start_time = time()
-        sorted_list = triSelection.selection_sort()
+        sorted_list = Selection.selection_sort()
         stop_time = time()
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
         print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
 
-
     if sort == 2:
-        triBulle = TriBulle (unordered_list)
+        Bulle = Bulle (unordered_list)
         start_time = time() 
-        sorted_list = triBulle.bubble_sort()
+        sorted_list = Bulle.bubble_sort()
         stop_time = time()
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
@@ -62,13 +62,44 @@ if __name__ == "__main__":
         print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
 
     if sort == 3:
-        triInsertion = TriInsertion (unordered_list)
+        Insertion = Insertion (unordered_list)
         start_time = time()
-        sorted_list = triInsertion.insertion_sort()
+        sorted_list = Insertion.insertion_sort()
         stop_time = time()
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
         print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+
+    if sort == 4:
+        Fusion = Fusion(unordered_list)  # Instantiate Fusion with unordered_list
+        start_time = time()
+        sorted_list = Fusion.fusion_sort(unordered_list)  # Call fusion_sort() on the Fusion instance
+        stop_time = time()
+        elapsed_time = (stop_time - start_time) * 1000
+        print("\n", sorted_list)
+
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+
+    if sort == 5:
+        Quick = Quick (unordered_list)
+        start_time = time()
+        sorted_list = Quick.quick_sort(unordered_list)
+        stop_time = time()
+        elapsed_time = (stop_time - start_time)*1000
+        print("\n",sorted_list)
+
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+
+    if sort == 6:
+        Heap = Heap (unordered_list)
+        start_time = time()
+        sorted_list = Heap.heap_sort(unordered_list)
+        stop_time = time()
+        elapsed_time = (stop_time - start_time)*1000
+        print("\n",sorted_list)
+
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+
 
 

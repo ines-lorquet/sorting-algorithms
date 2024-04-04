@@ -1,8 +1,9 @@
-class TriInsertion():
+class Insertion():
     def __init__(self, arr):
         self.arr = arr
 
     def insertion_sort(self):
+        # runs through every element in the list
         for i in range(1,len(self.arr)):
             current = self.arr[i]
             j = i
