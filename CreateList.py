@@ -1,4 +1,4 @@
-import random
+import random, statistics, os
 from sort.Selection import Selection
 from sort.Bulle import Bulle
 from sort.Insertion import Insertion
@@ -7,7 +7,7 @@ from sort.Quick import Quick
 from sort.Heap import Heap
 from sort.Comb import Comb
 from time import time
-
+import matplotlib.pyplot as plt
 
 class CreateList:
     def __init__(self, length, min_value, max_value):
@@ -25,7 +25,6 @@ class CreateList:
         generated_list = [round(random.uniform(self.min_value, self.max_value), 1) for _ in range(self.length)]
         return generated_list
 
-
 if __name__ == "__main__":
 
     length = int(input ("\nChoisissez une longueur de liste : "))
@@ -41,76 +40,69 @@ if __name__ == "__main__":
 
     sort = int(input("\nChoisissez le chiffre correspondant à la méthode de tri voulue : "))
 
-    if sort == 1:
-        Selection = Selection (unordered_list)
+    # Mapping des méthodes de tri aux classes correspondantes
+    sorting_methods = {
+        1: (Selection, "tri par sélection"),
+        2: (Bulle, "tri à bulle"),
+        3: (Insertion, "tri par insertion"),
+        4: (Fusion, "tri par fusion"),
+        5: (Quick, "tri rapide"),
+        6: (Heap, "tri par tas"),
+        7: (Comb, "tri par peigne")
+    }
+
+    if sort in sorting_methods:
+        sorting_class, method_name = sorting_methods[sort]
+        sorting_instance = sorting_class(unordered_list)
+        
         start_time = time()
-        sorted_list = Selection.selection_sort()
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
+        # sorted_list = sorting_instance.sort_method() if hasattr(sorting_instance, 'sort_method') else sorting_instance.selection_sort()
+        if hasattr(sorting_instance, 'sort_method'):
+            sorted_list = sorting_instance.sort_method()
+        else:
+            sorted_list = sorting_instance.selection_sort() if sort == 1 else sorting_instance.bubble_sort() if sort == 2 else sorting_instance.insertion_sort() if sort == 3 else sorting_instance.fusion_sort(unordered_list) if sort == 4 else sorting_instance.quick_sort(unordered_list) if sort == 5 else sorting_instance.heap_sort(unordered_list) if sort == 6 else sorting_instance.comb_sort(unordered_list) if sort == 7 else None
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par selection\033[0m\n")
-
-    if sort == 2:
-        Bulle = Bulle (unordered_list)
-        start_time = time() 
-        sorted_list = Bulle.bubble_sort()
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri à bulle\033[0m\n")
-
-    if sort == 3:
-        Insertion = Insertion (unordered_list)
-        start_time = time()
-        sorted_list = Insertion.insertion_sort()
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par insertion\033[0m\n")
-
-    if sort == 4:
-        Fusion = Fusion(unordered_list)  # Instantiate Fusion with unordered_list
-        start_time = time()
-        sorted_list = Fusion.fusion_sort(unordered_list)  # Call fusion_sort() on the Fusion instance
         stop_time = time()
         elapsed_time = (stop_time - start_time) * 1000
+        
         print("\n", sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par fusion\033[0m\n")
-
-    if sort == 5:
-        Quick = Quick (unordered_list)
-        start_time = time()
-        sorted_list = Quick.quick_sort(unordered_list)
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri rapide\033[0m\n")
-
-    if sort == 6:
-        Heap = Heap (unordered_list)
-        start_time = time()
-        sorted_list = Heap.heap_sort(unordered_list)
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par tas\033[0m\n")
-
-    if sort == 7:
-        Comb = Comb (unordered_list)
-        start_time = time()
-        sorted_list = Comb.comb_sort(unordered_list)
-        stop_time = time()
-        elapsed_time = (stop_time - start_time)*1000
-        print("\n",sorted_list)
-
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par peigne\033[0m.\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94m{method_name}\033[0m.\n")
 
 
+        # Création du tableau Markdown
+        # table = f"| Nombre d'entiers naturels dans la liste | Méthode de tri | Temps d'exécution  |\n"
+        # Incrémentation du tableau Markdown    
+        # table += f"| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
 
+        # Création du tableau Markdown
+        table = f"| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
+
+
+        # Écriture du tableau dans README.md
+        if not os.path.exists("README.md"):
+            with open("README.md", "w") as readme_file:
+                readme_file.write("| Nombre d'entiers naturels dans la liste | Méthode de tri | Temps d'exécution  |\n")
+                readme_file.write("| -------------- | ------------- | ----------------- |\n")
+                readme_file.write(table)
+        else:
+            try:
+                with open("README.md", "a") as readme_file:
+                    readme_file.write(table)
+                print("Une ligne a été ajoutée avec succès au fichier README.md.")
+            except Exception as e:
+                print(f"Une erreur s'est produite lors de l'ajout de la ligne au fichier README.md : {e}")
+
+    else:
+        print("La méthode de tri sélectionnée n'est pas valide.")
+
+            # Calcul des statistiques de temps
+        # elapsed_times = [elapsed_time]
+        # minimum_time = min(elapsed_times)
+        # maximum_time = max(elapsed_times)
+        # average_time = statistics.mean(elapsed_times)
+
+        # Mise à jour du tableau Markdown avec les statistiques finales
+        # table += f"\nTemps le plus court : {(minimum_time * 1000):.3f} ms\n"
+        # table += f"Temps le plus long : {(maximum_time * 1000):.3f} ms\n"
+        # table += f"Temps moyen : {(average_time * 1000):.3f} ms\n"
 
