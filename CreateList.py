@@ -5,7 +5,7 @@ from sort.Insertion import Insertion
 from sort.Fusion import Fusion
 from sort.Quick import Quick
 from sort.Heap import Heap
-# from sort.Comb import Comb
+from sort.Comb import Comb
 from time import time
 
 
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par selection\033[0m\n")
 
     if sort == 2:
         Bulle = Bulle (unordered_list)
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri à bulle\033[0m\n")
 
     if sort == 3:
         Insertion = Insertion (unordered_list)
@@ -69,7 +69,7 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par insertion\033[0m\n")
 
     if sort == 4:
         Fusion = Fusion(unordered_list)  # Instantiate Fusion with unordered_list
@@ -79,7 +79,7 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time) * 1000
         print("\n", sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par fusion\033[0m\n")
 
     if sort == 5:
         Quick = Quick (unordered_list)
@@ -89,7 +89,7 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri rapide\033[0m\n")
 
     if sort == 6:
         Heap = Heap (unordered_list)
@@ -99,7 +99,18 @@ if __name__ == "__main__":
         elapsed_time = (stop_time - start_time)*1000
         print("\n",sorted_list)
 
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms\n")
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par tas\033[0m\n")
+
+    if sort == 7:
+        Comb = Comb (unordered_list)
+        start_time = time()
+        sorted_list = Comb.comb_sort(unordered_list)
+        stop_time = time()
+        elapsed_time = (stop_time - start_time)*1000
+        print("\n",sorted_list)
+
+        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94mtri par peigne\033[0m.\n")
+
 
 
 
