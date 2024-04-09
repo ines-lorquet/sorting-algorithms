@@ -77,23 +77,61 @@ if __name__ == "__main__":
         print("\n", sorted_list)
         print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94m{method_name}\033[0m.\n")
 
-        # Creates the graph
-        plt.figure(figsize=(10, 5))
-        # Définit l'intervalle des abscisses
-        plt.xlim(0, len(sorted_list) - 1)
-        # Définit l'intervalle des ordonnées
-        plt.ylim(min(sorted_list), max(sorted_list))
+# --------------------------------------------------------------------------------------------------
+
+        # # BAR GRAPH
+        # plt.figure(figsize=(10, 5))
+        # # Définit l'intervalle des abscisses
+        # plt.xlim(0, len(sorted_list) - 1)
+        # # Définit l'intervalle des ordonnées
+        # plt.ylim(min(sorted_list), max(sorted_list))
+
+        # for i in range(len(sorted_list)):
+        #     # Updates the graph at each iteration
+        #     plt.plot(sorted_list[:i+1], color='blue', label='Tri en cours')
+        #     plt.xlabel('Nombre d\'éléments')
+        #     plt.ylabel('Valeurs')
+        #     plt.title(f'Progression du tri - {method_name}')
+        #     plt.tight_layout()
+        #     plt.pause(0.1)
+        # # maintains the graph after the scripts ends  
+        # plt.show(block=True)
+
+# --------------------------------------------------------------------------------------------------
+
+        # # PIE GRAPH
+        # plt.figure(figsize=(10, 10))
+        # plt.pie(sorted_list, startangle=140)
+        # plt.title(f"Graphique en forme de disque - Tri {method_name}")
+        # plt.axis('equal')  # Assure que le graphique est circulaire
+        # plt.show() 
+
+# --------------------------------------------------------------------------------------------------
+
+        # Normalize the sorted list to map it to colors
+        norm = Normalize(vmin=min(sorted_list), vmax=max(sorted_list))
+
+        # Create a colormap
+        cmap = plt.get_cmap('viridis')
+
+        # Plot the sorted list with colors in a pie chart
+        plt.figure(figsize=(10, 10))
+
+    
+        colors = [cmap(norm(value)) for value in sorted_list]
+        plt.title(f"{method_name} de {length} valeurs en {elapsed_time:.3f} ms.")
+        # Makes sure the graph is round
+        # plt.axis('equal') 
 
         for i in range(len(sorted_list)):
             # Updates the graph at each iteration
-            plt.plot(sorted_list[:i+1], color='blue', label='Tri en cours')
-            plt.xlabel('Nombre d\'éléments')
-            plt.ylabel('Valeurs')
-            plt.title(f'Progression du tri - {method_name}')
-            plt.tight_layout()
-            plt.pause(0.05)
-        # maintains the graph after the scripts ends  
-        plt.show(block=True)
+            # plt.pie(sorted_list, startangle=140, colors=colors)
+            plt.pie(sorted_list[:i+1], startangle=140, colors=colors)
+            plt.pause(0.000000001)
+
+ 
+        plt.show()
+
 
 
 
