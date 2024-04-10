@@ -77,63 +77,49 @@ if __name__ == "__main__":
         print("\n", sorted_list)
         print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94m{method_name}\033[0m.\n")
 
-# --------------------------------------------------------------------------------------------------
-
-        # # BAR GRAPH
-        # plt.figure(figsize=(10, 5))
-        # # Définit l'intervalle des abscisses
-        # plt.xlim(0, len(sorted_list) - 1)
-        # # Définit l'intervalle des ordonnées
-        # plt.ylim(min(sorted_list), max(sorted_list))
-
-        # for i in range(len(sorted_list)):
-        #     # Updates the graph at each iteration
-        #     plt.plot(sorted_list[:i+1], color='blue', label='Tri en cours')
-        #     plt.xlabel('Nombre d\'éléments')
-        #     plt.ylabel('Valeurs')
-        #     plt.title(f'Progression du tri - {method_name}')
-        #     plt.tight_layout()
-        #     plt.pause(0.1)
-        # # maintains the graph after the scripts ends  
-        # plt.show(block=True)
-
-# --------------------------------------------------------------------------------------------------
-
-        # # PIE GRAPH
-        # plt.figure(figsize=(10, 10))
-        # plt.pie(sorted_list, startangle=140)
-        # plt.title(f"Graphique en forme de disque - Tri {method_name}")
-        # plt.axis('equal')  # Assure que le graphique est circulaire
-        # plt.show() 
 
 # --------------------------------------------------------------------------------------------------
 
         # Normalize the sorted list to map it to colors
         norm = Normalize(vmin=min(sorted_list), vmax=max(sorted_list))
-
         # Create a colormap
         cmap = plt.get_cmap('viridis')
 
+# --------------------------------------------------------------------------------------------------
+
         # Plot the sorted list with colors in a pie chart
         plt.figure(figsize=(10, 10))
+        # fig, ax = plt.subplots(figsize=(12, 6))
 
-    
         colors = [cmap(norm(value)) for value in sorted_list]
         plt.title(f"{method_name} de {length} valeurs en {elapsed_time:.3f} ms.")
-        # Makes sure the graph is round
-        # plt.axis('equal') 
-
+# --------------------------------------------------------------------------------------------------        
+        # STATIC VERSION
+        # plt.pie(sorted_list, startangle=140, colors=colors)
+# --------------------------------------------------------------------------------------------------
+        # # PROGRESSIVE VERSION 
         for i in range(len(sorted_list)):
             # Updates the graph at each iteration
-            # plt.pie(sorted_list, startangle=140, colors=colors)
             plt.pie(sorted_list[:i+1], startangle=140, colors=colors)
             plt.pause(0.000000001)
+# --------------------------------------------------------------------------------------------------
+        # ADDS A LEGEND
+        max_value = int(max(sorted_list))
+        # Divides the values in range 100
+        value_ranges = [(i, min(i + 99, max_value)) for i in range(0, max_value, 100)]
 
- 
+        # Value ranges and their corresponding colors
+        legend_labels = {f"{start}-{end}": cmap(norm((start + end) / 2)) for start, end in value_ranges}
+
+        # Patch list for the legend
+        legend_patches = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color, markersize=10, label=label) for label, color in legend_labels.items()]
+
+        plt.legend(handles=legend_patches, loc='upper right', bbox_to_anchor=(1.2, 1))
+
+# --------------------------------------------------------------------------------------------------
+
+
         plt.show()
-
-
-
 
         # Creates the Markdown table
         table = f"| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
@@ -155,5 +141,4 @@ if __name__ == "__main__":
 
     else:
         print("La méthode de tri sélectionnée n'est pas valide.")
-
 
