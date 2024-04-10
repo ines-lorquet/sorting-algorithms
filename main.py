@@ -3,6 +3,7 @@ from sorting import *
 from time import time
 import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
+from matplotlib.patches import Rectangle
 import numpy as np
 
 class CreateList:
@@ -88,11 +89,11 @@ if __name__ == "__main__":
 # --------------------------------------------------------------------------------------------------
 
         # Plot the sorted list with colors in a pie chart
-        plt.figure(figsize=(10, 10))
+        plt.figure(figsize=(10, 10), facecolor='black')
         # fig, ax = plt.subplots(figsize=(12, 6))
 
         colors = [cmap(norm(value)) for value in sorted_list]
-        plt.title(f"{method_name} de {length} valeurs en {elapsed_time:.3f} ms.")
+        plt.title(f"{method_name} de {length} valeurs aléatoires comprises entre 0 et 1000 en {elapsed_time:.3f} ms.", color='white')
 # --------------------------------------------------------------------------------------------------        
         # STATIC VERSION
         # plt.pie(sorted_list, startangle=140, colors=colors)
@@ -111,10 +112,14 @@ if __name__ == "__main__":
         # Value ranges and their corresponding colors
         legend_labels = {f"{start}-{end}": cmap(norm((start + end) / 2)) for start, end in value_ranges}
 
-        # Patch list for the legend
-        legend_patches = [plt.Line2D([0], [0], marker='o', color='w', markerfacecolor=color, markersize=10, label=label) for label, color in legend_labels.items()]
+        # Patch list for the legend with colored squares
+        legend_patches = [
+            Rectangle((0, 0), 1, 1, color=color, label=label) 
+            for label, color in legend_labels.items()
+        ]
 
-        plt.legend(handles=legend_patches, loc='upper right', bbox_to_anchor=(1.2, 1))
+
+        plt.legend(handles=legend_patches, loc='upper right', bbox_to_anchor=(1.2, 0.75), facecolor='black', edgecolor='white', fontsize=12, labelcolor='white')
 
 # --------------------------------------------------------------------------------------------------
 
