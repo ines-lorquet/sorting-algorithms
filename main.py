@@ -145,5 +145,5 @@ if __name__ == "__main__":
                 print(f"An error occurred while adding the line to the README.md file : {e}")
 
     else:
-        print("La méthode de tri sélectionnée n'est pas valide.")
+        print("The selected sorting method is not valid.")
 
