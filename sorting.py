@@ -13,7 +13,7 @@ class Sorting:
                     i_min=j
             list[i],list[i_min]=list[i_min],list[i]
         return list
-    
+
     def random_list(self,n):
         list = []
         for i in range(n):
