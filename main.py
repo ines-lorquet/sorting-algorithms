@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 from matplotlib.colors import Normalize
 from matplotlib.patches import Rectangle
 import numpy as np
-
+from time import perf_counter
 class CreateList:
     def __init__(self, length, min_value, max_value):
         self.length = length
@@ -65,18 +65,20 @@ if __name__ == "__main__":
         sorting_class, method_name = sorting_methods[sort]
         sorting_instance = sorting_class(unordered_list)
         
-        start_time = time()
-
+        # start_time = time()
+        start_time = perf_counter()
         if hasattr(sorting_instance, 'sort_method'):
             sorted_list = sorting_instance.sort_method()
         else:
             sorted_list = sorting_instance.selection_sort() if sort == 1 else sorting_instance.bubble_sort() if sort == 2 else sorting_instance.insertion_sort() if sort == 3 else sorting_instance.fusion_sort(unordered_list) if sort == 4 else sorting_instance.quick_sort(unordered_list) if sort == 5 else sorting_instance.heap_sort(unordered_list) if sort == 6 else sorting_instance.comb_sort(unordered_list) if sort == 7 else None
 
-        stop_time = time()
+        # stop_time = time()
+        stop_time = perf_counter()
         elapsed_time = (stop_time - start_time) * 1000
         
         print("\n", sorted_list)
-        print(f"\nListe de \033[94m{length}\033[0m entrées triée en \033[94m{elapsed_time:.2f}\033[0m ms avec la méthode du \033[94m{method_name}\033[0m.\n")
+        print(f"\nList of \033[94m{length}\033[0m entries sorted in \033[94m{elapsed_time:.2f}\033[0m ms using the \033[94m{method_name}\033[0m method.\n")
+
 
 
 # --------------------------------------------------------------------------------------------------
@@ -93,7 +95,7 @@ if __name__ == "__main__":
         # fig, ax = plt.subplots(figsize=(12, 6))
 
         colors = [cmap(norm(value)) for value in sorted_list]
-        plt.title(f"{method_name} de {length} valeurs aléatoires comprises entre 0 et 1000 en {elapsed_time:.3f} ms.", color='white')
+        plt.title(f"{method_name} from {length} random values ​​between 0 and 1000 inclusive {elapsed_time:.3f} ms.", color='white')
 # --------------------------------------------------------------------------------------------------        
         # STATIC VERSION
         # plt.pie(sorted_list, startangle=140, colors=colors)
