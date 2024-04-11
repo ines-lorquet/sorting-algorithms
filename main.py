@@ -132,7 +132,7 @@ if __name__ == "__main__":
         # Creates the README.md file if needed
         if not os.path.exists("README.md"):
             with open("README.md", "w") as readme_file:
-                readme_file.write("| Nombre d'entiers naturels dans la liste | Méthode de tri | Temps d'exécution  |\n")
+                readme_file.write("| Number of natural numbers in the list | Sorting method | Execution time |\n")
                 readme_file.write("| -------------- | ------------- | ----------------- |\n")
                 readme_file.write(table)
         #  Writes a new line in the table in README.md
