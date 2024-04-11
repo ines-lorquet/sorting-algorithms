@@ -31,16 +31,16 @@ def plot_unordered_list(unordered_list):
     plt.legend()
     plt.tight_layout()
     plt.show()
-
-if __name__ == "__main__":
+ 
+if __name__ == "__main__": 
 
     # Asks the user the size of the list, creates the list
-    length = int(input ("\nChoisissez une longueur de liste : "))
-    min_value = 0.1
-    max_value = 1000.0
-    createList = CreateList(length, min_value, max_value)
-    unordered_list = createList.generate_list()
-    print(f"\nLa liste de {length} nombres réels à été générée.\n")
+    length = int(input ("\nChoose a list length : ")) 
+    min_value = 0.1 
+    max_value = 1000.0 
+    createList = CreateList(length, min_value, max_value) 
+    unordered_list = createList.generate_list() 
+    print(f"\nA list of {length} real numbers has been generated.\n")
 
     # Prints the available sorting methods
     for i in range(1,8):
