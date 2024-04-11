@@ -86,3 +86,6 @@
 | 25 | tri par tas | 0.000 ms |
 | 30 | tri à bulle | 0.000 ms |
 | 30 | tri à bulle | 0.106 ms |
+| 30 | tri à bulle | 0.107 ms |
+| 30 | bubble sort | 0.110 ms |
+| 30 | bubble sort | 0.113 ms |

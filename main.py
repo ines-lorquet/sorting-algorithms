@@ -25,9 +25,9 @@ class CreateList:
 def plot_unordered_list(unordered_list):
     plt.figure(figsize=(10, 5))
     plt.plot(unordered_list, color='gray', label='Non triée')
-    plt.xlabel('Indice des éléments')
-    plt.ylabel('Valeurs aléatoires')
-    plt.title('Liste non triée')
+    plt.xlabel('Indices of elements')
+    plt.ylabel('Random values')
+    plt.title('Unsorted list')
     plt.legend()
     plt.tight_layout()
     plt.show()
@@ -44,21 +44,20 @@ if __name__ == "__main__":
 
     # Prints the available sorting methods
     for i in range(1,8):
-        print(f"Tri {['sélection', 'bulle', 'insertion', 'fusion', 'rapide', 'par tas', 'à peigne'][i-1]} - \033[94m{i}\033[0m")
+        print(f"Sort {['selection', 'bubble', 'insertion', 'merge', 'quick', 'heap', 'comb'][i-1]} - \033[94m{i}\033[0m")
 
     # Asks the user which method he wishes to execute
     sort = int(input("\nChoose the number corresponding to the desired sorting method : "))
 
     # Mapping the sort methods and their corresponding classes
     sorting_methods = {
-        1: (Selection, "tri par sélection"),
-        2: (Bulle, "tri à bulle"),
-        3: (Insertion, "tri par insertion"),
-        4: (Fusion, "tri par fusion"),
-        5: (Quick, "tri rapide"),
-        6: (Heap, "tri par tas"),
-        7: (Comb, "tri par peigne")
-        
+        1: (Selection, "selection sort"),
+        2: (Bulle, "bubble sort"),
+        3: (Insertion, "insertion sort"),
+        4: (Fusion, "merge sort"),
+        5: (Quick, "quick sort"),
+        6: (Heap, "heap sort"),
+        7: (Comb, "comb sort")
     }
 
     # Executes the sorting method & displays the graphic

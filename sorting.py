@@ -44,7 +44,7 @@ class Fusion:
     def __init__(self, arr):
         self.arr = arr
 
-    # divides the original list into 2 lists 
+    # Divides the original list into 2 lists 
     def fusion(self, list_1, list_2):
         # Initiate the result list
         result = []
@@ -52,7 +52,7 @@ class Fusion:
         index_list_1, index_list_2 = 0, 0
         # Goes through all the lists
         while index_list_1 < len(list_1) and index_list_2 < len(list_2):
-            # for each index, takes the smallest element between the 2 lists
+            # For each index, takes the smallest element between the 2 lists
             if list_1[index_list_1] <= list_2[index_list_2]:
                 # Adds it to the result list
                 result.append(list_1[index_list_1])
@@ -64,7 +64,7 @@ class Fusion:
 
         # If list_1 is not empty.
         if list_1:
-            # adds any remaining elements of list_1 to the result list.
+            # Adds any remaining elements of list_1 to the result list.
             result.extend(list_1[index_list_1:])
         if list_2:
             result.extend(list_2[index_list_2:])
@@ -136,15 +136,15 @@ class Insertion():
         self.arr = arr
 
     def insertion_sort(self):
-        # runs through every element in the list
+        # Runs through every element in the list
         for i in range(1,len(self.arr)):
             current = self.arr[i]
             j = i
-            #décalage des éléments du self.arr }
+            # Shifting of elements in the self.arr
             while j>0 and self.arr[j-1]>current:
                 self.arr[j]=self.arr[j-1]
                 j = j-1
-            #on insère l'élément à sa place
+            # We insert the element in its place
             self.arr[j]=current
 
         # Return the sorted array
