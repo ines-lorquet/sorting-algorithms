@@ -27,3 +27,60 @@
 | 120 | tri par sélection | 1.197 ms |
 | 120 | tri par sélection | 1.514 ms |
 | 40 | tri à bulle | 0.000 ms |
+| 450 | tri à bulle | 9.029 ms |
+| 50 | tri rapide | 0.000 ms |
+| 40 | tri à bulle | 0.000 ms |
+| 40 | tri par fusion | 0.000 ms |
+| 40 | tri à bulle | 4.513 ms |
+| 45 | tri par insertion | 0.000 ms |
+| 45 | tri rapide | 0.000 ms |
+| 45 | tri à bulle | 12.015 ms |
+| 100 | tri par fusion | 2.014 ms |
+| 100 | tri à bulle | 0.000 ms |
+| 150 | tri par tas | 0.000 ms |
+| 150 | tri par insertion | 1.025 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 40 | tri à bulle | 0.000 ms |
+| 20 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 20 | tri à bulle | 0.000 ms |
+| 50 | tri à bulle | 0.000 ms |
+| 75 | tri à bulle | 0.000 ms |
+| 45 | tri à bulle | 0.000 ms |
+| 50 | tri par insertion | 0.000 ms |
+| 22 | tri à bulle | 0.000 ms |
+| 45 | tri à bulle | 0.000 ms |
+| 45 | tri à bulle | 0.000 ms |
+| 40 | tri rapide | 0.000 ms |
+| 45 | tri à bulle | 0.000 ms |
+| 12 | tri à bulle | 0.000 ms |
+| 40 | tri rapide | 0.000 ms |
+| 50 | tri par sélection | 0.000 ms |
+| 45 | tri rapide | 0.000 ms |
+| 40 | tri par peigne | 0.000 ms |
+| 45 | tri par tas | 0.000 ms |
+| 1000 | tri rapide | 1.983 ms |
+| 45 | tri à bulle | 0.000 ms |
+| 30 | tri rapide | 0.000 ms |
+| 30 | tri rapide | 0.000 ms |
+| 12 | tri rapide | 0.000 ms |
+| 15 | tri à bulle | 0.000 ms |
+| 45 | tri rapide | 0.000 ms |
+| 40 | tri rapide | 0.000 ms |
+| 45 | tri rapide | 0.000 ms |
+| 23 | tri rapide | 0.000 ms |
+| 42 | tri à bulle | 0.000 ms |
+| 20 | tri rapide | 0.000 ms |
+| 25 | tri rapide | 0.000 ms |
+| 24 | tri à bulle | 0.000 ms |
+| 23 | tri rapide | 0.000 ms |
+| 23 | tri par fusion | 0.000 ms |
+| 12 | tri par fusion | 0.000 ms |
+| 25 | tri par tas | 0.000 ms |
