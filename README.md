@@ -84,3 +84,4 @@
 | 23 | tri par fusion | 0.000 ms |
 | 12 | tri par fusion | 0.000 ms |
 | 25 | tri par tas | 0.000 ms |
+| 30 | tri à bulle | 0.000 ms |

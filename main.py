@@ -142,7 +142,7 @@ if __name__ == "__main__":
                     readme_file.write(table)
                 print("Une ligne a été ajoutée avec succès au fichier README.md.")
             except Exception as e:
-                print(f"Une erreur s'est produite lors de l'ajout de la ligne au fichier README.md : {e}")
+                print(f"An error occurred while adding the line to the README.md file : {e}")
 
     else:
         print("La méthode de tri sélectionnée n'est pas valide.")
