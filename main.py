@@ -140,7 +140,7 @@ if __name__ == "__main__":
             try:
                 with open("README.md", "a") as readme_file:
                     readme_file.write(table)
-                print("Une ligne a été ajoutée avec succès au fichier README.md.")
+                print("A line has been successfully added to the README.md file.")
             except Exception as e:
                 print(f"An error occurred while adding the line to the README.md file : {e}")
 
