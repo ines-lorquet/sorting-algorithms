@@ -47,7 +47,7 @@ if __name__ == "__main__":
         print(f"Tri {['sélection', 'bulle', 'insertion', 'fusion', 'rapide', 'par tas', 'à peigne'][i-1]} - \033[94m{i}\033[0m")
 
     # Asks the user which method he wishes to execute
-    sort = int(input("\nChoisissez le chiffre correspondant à la méthode de tri voulue : "))
+    sort = int(input("\nChoose the number corresponding to the desired sorting method : "))
 
     # Mapping the sort methods and their corresponding classes
     sorting_methods = {
@@ -58,6 +58,7 @@ if __name__ == "__main__":
         5: (Quick, "tri rapide"),
         6: (Heap, "tri par tas"),
         7: (Comb, "tri par peigne")
+        
     }
 
     # Executes the sorting method & displays the graphic
