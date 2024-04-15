@@ -20,7 +20,11 @@ The program creates a list of random natural numbers.
 | Number of natural numbers in the list | Sorting method | Execution time |
 
 | -------------- | ------------- | ----------------- |
-| 25 | insertion sort | 0.045 ms |
-| 50 | selection sort | 0.156 ms |
-| 60 | selection sort | 0.199 ms |
-| 20 | selection sort | 0.080 ms |
+
+| 30 | selection sort | 0.067 ms |
+
+| 40 | merge sort | 0.148 ms |
+
+| 10 | selection sort | 0.031 ms |
+
+| 90 | selection sort | 0.459 ms |

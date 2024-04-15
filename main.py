@@ -129,7 +129,7 @@ if __name__ == "__main__":
         plt.show()
 
         # Creates the Markdown table
-        table = f"| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
+        table = f"\n| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
 
         # Creates the README.md file if needed
         if not os.path.exists("README.md"):
