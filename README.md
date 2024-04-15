@@ -18,3 +18,6 @@ The program creates a list of random natural numbers.
 | Number of natural numbers in the list | Sorting method | Execution time |
 | -------------- | ------------- | ----------------- |
 | 25 | selection sort | 0.057 ms |
+| 45 | bubble sort | 0.132 ms |
+| 50 | insertion sort | 0.134 ms |
+| 80 | merge sort | 0.215 ms |
