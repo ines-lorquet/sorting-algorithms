@@ -1,8 +1,11 @@
-| Nombre d'entiers naturels dans la liste | M�thode de tri | Temps d'ex�cution  |
+Creating a tool for automating sorting of objects containing the following sorts:
+1. Selection sort
+2. Bubble sort
+3. Insertion sort
+4. Merge sort
+5. Quick sort
+6. Heap sort
+7. Comb sort 
+| Number of natural numbers in the list | Sorting method | Execution time |
 | -------------- | ------------- | ----------------- |
-| 10000 | tri par s�lection | 1892.938 ms |
-| 4000 | tri � bulle | 670.412 ms |
-| 1000 | tri rapide | 6.227 ms |
-| 1000 | tri rapide | 1.928 ms |
-| 1000 | tri rapide | 16.551 ms |
-
+| 25 | selection sort | 0.052 ms |

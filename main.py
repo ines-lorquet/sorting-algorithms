@@ -134,6 +134,8 @@ if __name__ == "__main__":
         # Creates the README.md file if needed
         if not os.path.exists("README.md"):
             with open("README.md", "w") as readme_file:
+                readme_file.write("Creating a tool for automating sorting of objects containing the following sorts:\n")
+                readme_file.write("1. Selection sort\n2. Bubble sort\n3. Insertion sort\n4. Merge sort\n5. Quick sort\n6. Heap sort\n7. Comb sort \n")
                 readme_file.write("| Number of natural numbers in the list | Sorting method | Execution time |\n")
                 readme_file.write("| -------------- | ------------- | ----------------- |\n")
                 readme_file.write(table)
