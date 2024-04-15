@@ -136,6 +136,7 @@ if __name__ == "__main__":
             with open("README.md", "w") as readme_file:
                 readme_file.write("Creating a tool for automating sorting of objects containing the following sorts:\n")
                 readme_file.write("1. Selection sort\n2. Bubble sort\n3. Insertion sort\n4. Merge sort\n5. Quick sort\n6. Heap sort\n7. Comb sort \n")
+                readme_file.write("Instructions \n Input a number to determine your list’s length.\nThe program creates a list of random natural numbers.\n Choose a sort within the sorts available.\n The program :\n sorts the list \n displays the ordered list in the terminal\n returns the length of the list, the name of the sorting method and the execution time in a table\n displays a pie graph of the ordered list \n")
                 readme_file.write("| Number of natural numbers in the list | Sorting method | Execution time |\n")
                 readme_file.write("| -------------- | ------------- | ----------------- |\n")
                 readme_file.write(table)
