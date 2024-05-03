@@ -6,6 +6,8 @@ from matplotlib.colors import Normalize
 from matplotlib.patches import Rectangle
 import numpy as np
 
+BACK_COLOR = "#101728"
+
 class CreateList:
     def __init__(self, length, min_value, max_value):
         self.length = length
@@ -89,7 +91,7 @@ if __name__ == "__main__":
 # --------------------------------------------------------------------------------------------------
 
         # Plot the sorted list with colors in a pie chart
-        plt.figure(figsize=(10, 10), facecolor='black')
+        plt.figure(figsize=(10, 10), facecolor = BACK_COLOR)
         # fig, ax = plt.subplots(figsize=(12, 6))
 
         colors = [cmap(norm(value)) for value in sorted_list]
@@ -127,7 +129,7 @@ if __name__ == "__main__":
         plt.show()
 
         # Creates the Markdown table
-        table = f"| {length} | {method_name} | {elapsed_time:.3f} ms |\n"
+        table = f"| {length} | {method_name} | {elapsed_time:.3f} ms  "
 
         # Creates the README.md file if needed
         if not os.path.exists("README.md"):
